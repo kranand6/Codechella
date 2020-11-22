@@ -1,3 +1,15 @@
 <%- include('header'); -%> 
+    <h1>Latest Feed</h1>
+        <div class = 'feed'>
+            <ul>
+            <% listItems.statuses.forEach(function(result){ %> 
+                <% if(result.lang ==='en' ){ %> 
+                    <li>
+                        <p> <%= result.text%> </p>
+                    </li>
+                <% }%>
+            <% }); %> 
+        </ul>
+        </div>
     
 <%- include('footer'); -%> 

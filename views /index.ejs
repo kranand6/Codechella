@@ -2,17 +2,36 @@
     
     <div class="container">
         <div id="left">
-            <form action="/health" method="get">
+            <form action="/healthFeed" method="get">
                 <button type="submit" class="fa fa-heartbeat" style="font-size:48px;color:red">  </button>
-            <button type="submit" class="fa fa-heartbeat" style="font-size:48px;color:red">  </button></form>
+            </form>
             
         </div>
         <div id = "center">
             <h1>Tweet</h1>
-            <form action="/" method="post">
+            <form action="/" method="POST">
                 <textarea id="txtArea" name="input" rows="5" cols="70" maxlength="280" placeholder="What`s happening?"></textarea>
                 <button type="submit" name = "submit" class="btn btn-primary">Tweet</button>
             </form>
         </div>    
+        <h1>Latest Feed</h1>
+        
+        <div class = 'feed'>
+        <ul>
+            <% if(yourTweet != ''){ %>
+                <li>
+                    <%= yourTweet %>
+                </li>
+            <% } %>
+            
+            <% Items.statuses.forEach(function(result){ %> 
+                <% if(result.lang ==='en'){ %> 
+                    <li>
+                        <p> <%= result.text%> </p>
+                    </li>
+                <% }%>
+            <% }); %> 
+        </ul>
+        </div>
     </div>    
 <%- include('footer'); -%> 
