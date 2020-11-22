@@ -1,0 +1,18 @@
+<%- include('header'); -%> 
+    
+    <div class="container">
+        <div id="left">
+            <form action="/health" method="get">
+                <button type="submit" class="fa fa-heartbeat" style="font-size:48px;color:red">  </button>
+            <button type="submit" class="fa fa-heartbeat" style="font-size:48px;color:red">  </button></form>
+            
+        </div>
+        <div id = "center">
+            <h1>Tweet</h1>
+            <form action="/" method="post">
+                <textarea id="txtArea" name="input" rows="5" cols="70" maxlength="280" placeholder="What`s happening?"></textarea>
+                <button type="submit" name = "submit" class="btn btn-primary">Tweet</button>
+            </form>
+        </div>    
+    </div>    
+<%- include('footer'); -%> 
